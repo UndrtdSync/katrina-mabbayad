@@ -1,7 +1,9 @@
 :root { --bg: #c9ecff; --navy: #0a2540; --blue: #0066ff; --neon: #00c2ff; --neon-glow: rgba(0,194,255,.65); --card: #ffffff; --muted: #2f5a7a; }
 * { box-sizing: border-box; margin: 0; font-family: 'Segoe UI', system-ui, sans-serif; }
-html { scroll-behavior: smooth; }
-body { background: linear-gradient(180deg, #c9ecff 0%, #aee2ff 40%, #c9ecff 100%); color: var(--navy); line-height: 1.65; font-size: 18px; }
+html { scroll-behavior: smooth; overflow-x: hidden; }
+body { background: linear-gradient(180deg, #c9ecff 0%, #aee2ff 40%, #c9ecff 100%); color: var(--navy); line-height: 1.65; font-size: 18px; overflow-x: hidden; }
+img { max-width: 100%; }
+h1, h2, h3, p, span { overflow-wrap: break-word; word-break: break-word; }
 section p, .card p, .p-card p { font-size: 1.1rem; }
 .pill-nav { position: sticky; top: 12px; z-index: 20; max-width: 960px; margin: 12px auto 0; display: flex; justify-content: space-between; align-items: center; background: #fff; border: 2px solid var(--neon); border-radius: 40px; padding: .6rem 1.4rem; box-shadow: 0 0 18px var(--neon-glow); }
 .pill-nav strong { color: var(--blue); letter-spacing: 1px; }
@@ -59,13 +61,22 @@ section h2 { font-size: 2.2rem; color: var(--navy); margin-bottom: 1rem; text-de
 .p-card::before { content: ""; position: absolute; top: 0; left: 0; right: 0; height: 6px; background: linear-gradient(90deg, var(--blue), var(--neon)); }
 .p-card:hover { transform: scale(1.04); box-shadow: 0 16px 36px rgba(0,102,255,.25); }
 .num { font-size: 2rem; font-weight: 800; color: transparent; -webkit-text-stroke: 1.5px var(--blue); }
-.medal-card { display: flex; gap: 1rem; align-items: center; background: linear-gradient(135deg, #fff, #e3f3ff); border: 2px solid var(--neon); border-radius: 16px; padding: 1.4rem; box-shadow: 0 0 24px rgba(0,194,255,.3); font-size: 2rem; }
+.medal-card { display: flex; gap: 1rem; align-items: center; background: linear-gradient(135deg, #fff, #e3f3ff); border: 2px solid var(--neon); border-radius: 16px; padding: 1.4rem; box-shadow: 0 0 24px rgba(0,194,255,.3); }
+.medal-card h3 { font-size: 1.4rem; }
 @media (max-width: 720px) {
+  body { font-size: 16px; }
+  section p, .p-card p { font-size: 1rem; }
   .menu-btn { display: block; }
   .nav-links { display: none; position: absolute; top: 110%; left: 12px; right: 12px; background: #fff; flex-direction: column; border-radius: 16px; padding: .8rem 1rem 1.1rem; border: 2px solid var(--neon); }
   .nav-links.open { display: flex; }
-  .hero h1 { font-size: 1.9rem; }
-  .seal { display: none; }
+  .hero h1 { font-size: 2rem; }
+  .hero-inner { padding: 3rem 1rem 5rem; }
+  .tagline { font-size: 1.1rem; }
+  section h2 { font-size: 1.6rem; }
+  .medal-card { flex-direction: column; text-align: center; }
+  .medal-card h3 { font-size: 1.25rem; }
+  .seal-logo { display: none; }
   .two-col { grid-template-columns: 1fr; }
   .edu-card { flex-direction: column; text-align: center; }
+  section { padding: 2rem 1rem; overflow-x: hidden; }
 }
